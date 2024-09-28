@@ -1,0 +1,8 @@
+select employees.lastName, employees.firstName, employees.employeeNumber, employees.officeCode
+from employees
+where employees.officeCode in (
+    select officeCode
+    from employees
+    Group By employees.officeCode
+    Having Count(*) < 5 ) ; 
+/Users/princessparangan/Desktop

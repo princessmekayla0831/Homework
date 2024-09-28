@@ -1,0 +1,3 @@
+select customers.addressLine1, customers.addressLine2, customers.postalCode, customers.state, customers.country
+From customers
+Where customers.state != 'Null'

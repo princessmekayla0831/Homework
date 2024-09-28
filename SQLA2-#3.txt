@@ -1,0 +1,6 @@
+select products.productName, count(distinct orders.customerNumber) as total_number_of_people
+From products
+join orderdetails on products.productCode = orderdetails.productCode
+join orders on orderdetails.orderNumber = orders.orderNumber
+group by products.productName
+order by total_number_of_people 

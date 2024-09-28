@@ -1,0 +1,4 @@
+select customers.customerName, customers.state,  customers.country
+From customers
+Where customers.country != 'USA'
+AND customers.customerName LIKE '%Collect%' ;

@@ -1,0 +1,8 @@
+select customers.customerName, customers.customerNumber, products.productName, products.productCode, sum(orderdetails.quantityOrdered) as total_ordered
+From Customers
+Join orders on orders.customerNumber = customers.customerNumber
+join orderdetails on orders.orderNumber = orderdetails.orderNumber
+join products on products.productCode = orderdetails.productCode
+group by  customers.customerName, customers.customerNumber, products.productName, products.productCode
+Having sum(orderdetails.quantityOrdered) > 10 
+order by total_ordered asc

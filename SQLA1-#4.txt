@@ -1,0 +1,3 @@
+select customers.state, AVG(customers.creditLimit) as average_credit_limit
+From Customers
+group by customers.state

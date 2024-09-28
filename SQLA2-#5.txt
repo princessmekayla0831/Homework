@@ -1,0 +1,5 @@
+select employees.employeeNumber, employees.firstName, employees.lastName, COUNT(customers.customerNumber) AS number_of_customers
+from employees 
+Join customers on employees.employeeNumber = customers.salesRepEmployeeNumber
+group BY employees.employeeNumber, employees.firstName, employees.lastName
+Having AVG(customers.creditLimit) > 15000 ;

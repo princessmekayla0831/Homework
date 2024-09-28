@@ -1,0 +1,3 @@
+select customers.contactFirstName, customers.contactLastName, customers.phone, customers.addressLine1, customers.creditLimit
+From Customers
+Where customers.creditLimit > 25000

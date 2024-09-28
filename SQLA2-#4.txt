@@ -1,0 +1,12 @@
+
+
+select employees.employeeNumber, employees.firstName, employees.lastName, offices.city, offices.officeCode
+from employees 
+join offices on employees.officeCode = offices.officeCode
+join customers on employees.employeeNumber = customers.salesRepEmployeeNumber
+join orders on customers.customerNumber = orders.customerNumber
+join orderdetails on orders.orderNumber = orderdetails.orderNumber
+Group by employees.employeeNumber, employees.firstName, employees.lastName, offices.city, offices.officeCode
+Having COUNT(DISTINCT orders.orderNumber) < 20;
+
+

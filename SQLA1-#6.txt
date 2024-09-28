@@ -1,0 +1,4 @@
+select customers.customerName, customers.customerNumber, SUM(payments.amount)
+From customers
+Join payments on payments.customerNumber = customers.customerNumber
+group by customers.customerName 
