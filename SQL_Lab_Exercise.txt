@@ -1,0 +1,25 @@
+Queries from Lab_Assignment SQL_Queries
+
+Select * From listings
+ 
+Select neighborhood, Count (*)
+	From listings
+	Group By neighborhood
+
+Select * 
+From listings 
+Order By number_of_revirews DESC
+Limit 20
+
+Select *
+	From reviews 	
+	Inner join listings 
+		On listings.id = reviews.listings_id
+	Where listings.property_type =  ‘Bed & Breakfast’
+
+
+
+
+
+
+
